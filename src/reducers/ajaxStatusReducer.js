@@ -1,5 +1,5 @@
 import * as types from '../actions/actionTypes';
-import initialState from './initialState';
+import initialState from '../models/initialState';
 
 /**
  * Function to check if the passed string ends in success, because then the request was successful

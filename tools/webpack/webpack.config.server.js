@@ -1,6 +1,8 @@
 const fs = require('fs');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const processVars = require('./vars');
+
 const IS_DEV = process.env.NODE_ENV !== 'production';
 
 const serverConfig = {
@@ -44,9 +46,7 @@ const serverConfig = {
 if (IS_DEV) {
 } else {
   serverConfig.plugins.push(
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
+    new webpack.DefinePlugin(processVars.webpackDefine),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({

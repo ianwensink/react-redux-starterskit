@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
+const processVars = require('./vars');
 
 const IS_DEV = process.env.NODE_ENV !== 'production';
 
@@ -44,9 +45,7 @@ if (IS_DEV) {
   );
 } else {
   clientConfig.plugins.push(
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
+    new webpack.DefinePlugin(processVars.webpackDefine),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({

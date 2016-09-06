@@ -6,31 +6,3 @@
   max-width: 850px;
   margin: 0 auto;
 }
-
-a.active {
-  color: orange;
-}
-
-nav {
-  padding-top: 20px;
-}
-
-td {
-  max-width:100%;
-  white-space:nowrap;
-  padding-right: 16px;
-}
-
-td.body {
-  white-space:nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 600px;
-}
-
-.form-group {
-  min-width: 200px;
-  .overview-page & {
-    max-width: 300px;
-  }
-}

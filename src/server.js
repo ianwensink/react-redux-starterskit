@@ -6,10 +6,7 @@ import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
 import routes from './routes';
 import configureServer from '../tools/server/configureServer';
-import initialState from './reducers/initialState';
-import {loadAchievements} from './actions/achievementActions';
-import {loadPages} from './actions/pageActions';
-import {loadLogs} from './actions/logActions';
+import initialState from './models/initialState';
 
 const app = express();
 
@@ -23,18 +20,15 @@ app.get('*', (req, res) => { // Map every request to React
     match({routes, location: req.url}, (err, redirect, props) => {
         if (err) {
             res.status(500).send(err.message); // Something went wrong
-        } else if (redirect) {
+        } else if (redirect) { // Redirect
             res.redirect(302, redirect.pathname + redirect.search)
-        } else if (!props) {
-            res.status(404).render('404'); // Not found
+        } else if (!props) { // Not found
+            res.status(404).render('404');
         } else {
             // Set initialState here if needed.
             const store = configureStore(initialState);
 
             const promises = [
-                store.dispatch(loadAchievements()), // Load achievements from API
-                store.dispatch(loadPages()), // Load pages from API
-                store.dispatch(loadLogs()) // Load log items from API
             ]; // Array with promises returned by the API
 
             Promise.all(promises).then(() => { // When all API requests are done, render React provider component and send all data in the store through the {store} prop
