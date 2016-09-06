@@ -1,7 +1,7 @@
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const path = require('path');
-const processVars = require('./vars');
+import webpack from 'webpack';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import path from 'path';
+import * as processVars from './vars';
 
 const IS_DEV = process.env.NODE_ENV !== 'production';
 

@@ -6,9 +6,9 @@
     "postinstall": "echo 'running postinstall';npm run build",
     "serve": "echo 'running serve'; NODE_ENV=development babel-node ./src/server.js",
     "serve:prod": "echo 'running serve:prod'; node --optimize_for_size --max_old_space_size=460 --gc_interval=100 ./dist/server.bundle.js",
-    "build": "echo 'running build';NODE_ENV=production webpack --config ./tools/webpack/webpack.config.js",
+    "build": "echo 'running build';NODE_ENV=production babel-node ./node_modules/webpack/bin/webpack --config ./tools/webpack/webpack.config.js",
     "clean": "echo 'running clean' rimraf dist",
-    "eslint": "eslint . --fix"
+    "eslint": "eslint ./src --fix"
   },
   "engines": {
     "node": "6.2.2",

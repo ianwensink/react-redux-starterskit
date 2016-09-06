@@ -1,7 +1,7 @@
-const fs = require('fs');
-const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const processVars = require('./vars');
+import webpack from 'webpack';
+import fs from 'fs';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import * as processVars from './vars';
 
 const IS_DEV = process.env.NODE_ENV !== 'production';
 

@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import invariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
-import rootReducer from '../reducers';
 import persistState from 'redux-localstorage';
-import processVars from '../../tools/webpack/vars';
+import rootReducer from '../reducers';
+import * as processVars from '../../tools/webpack/vars';
 
 /**
  * Method to create a store for Redux to store the app state in. Middleware is added here

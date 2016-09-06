@@ -33,10 +33,10 @@ app.get('*', (req, res) => { // Map every request to React
 
       Promise.all(promises).then(() => { // When all API requests are done, render React provider component and send all data in the store through the {store} prop
         const react = (
-                  <Provider store={store}>
-                    <RouterContext {...props} />
-                  </Provider>
-                );
+            <Provider store={store}>
+                <RouterContext {...props} />
+            </Provider>
+        );
 
         const reactString = renderToString(react); // Convert react response to string
 
@@ -49,8 +49,8 @@ app.get('*', (req, res) => { // Map every request to React
 
 app.listen(app.get('port'), error => { // Start application and listen to above set port
   if (error) {
-    console.log(error);  // eslint-disable-line no-console
+    console.error(error);
   } else {
-    console.log(`Listening at port ${app.get('port')}`);
+    console.info(`Listening at port ${app.get('port')}`);
   }
 });

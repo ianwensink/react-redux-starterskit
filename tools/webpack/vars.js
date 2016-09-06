@@ -1,4 +1,4 @@
-const vars = {
+export const vars = {
   stateStorage: {
     use: true,
     key: JSON.stringify('react_redux_starterskit'),
@@ -6,14 +6,9 @@ const vars = {
   }
 };
 
-const webpackDefine = {
+export const webpackDefine = {
   'process.env.NODE_ENV': JSON.stringify('production'),
   'process.stateStorage.use': vars.stateStorage.use,
   'process.stateStorage.key': vars.stateStorage.key,
   'process.stateStorage.paths': vars.stateStorage.paths
-};
-
-module.exports = {
-  vars,
-  webpackDefine
 };

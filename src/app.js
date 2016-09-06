@@ -1,11 +1,11 @@
 import 'babel-polyfill';
 import React from 'react';
-import { render } from 'react-dom';
-import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
+import { render } from 'react-dom';
+import configureStore from './store/configureStore';
 import routes from './routes';
-import processVars from '../tools/webpack/vars';
+import * as processVars from '../tools/webpack/vars';
 
 import './styles/styles.scss'; // Import SASS so webpack plugin Extract text plugin can load it from the JavaScript and the sass-loader can compile it to CSS
 
@@ -15,8 +15,8 @@ const initialState = JSON.parse(stateStorage); // Parse JSON string to JSON obje
 const store = configureStore(initialState); // Create store from initialState
 
 render(
-  <Provider store={store}>
-      <Router history={browserHistory} routes={routes} />
-  </Provider>,
-  document.getElementById('app')
+    <Provider store={store}>
+        <Router history={browserHistory} routes={routes} />
+    </Provider>,
+    document.getElementById('app')
 );

@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 
 /**
  * React root component that handles the App template used on every page
- * @param loading Whether application is currently performing an async request
  * @param children Child components to render as main content
  * @returns {*} React Component
  * @constructor
  */
-const App = ({ loading, children }) => {
+const App = ({ children }) => {
   return (
       <div className="container-fluid">
           {children}
@@ -17,18 +16,17 @@ const App = ({ loading, children }) => {
 };
 
 App.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.object.isRequired
 };
 
 /**
  * Format the props needed by the component.
  * @param state Current application state object
- * @param ownProps Props passed by the parent component
- * @returns {{loading: boolean}} Props to use in the component
+ * @returns {{state: *}} Props to use in the component
  */
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
   return {
-    loading: state.numAjaxCallsInProgress > 0
+    state
   };
 }
 
