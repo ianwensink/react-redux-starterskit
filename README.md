@@ -1,5 +1,9 @@
 # React-redux starterskit
 
+For a version without the example, please clone the <a href="https://github.com/ianwensink/react-redux-starterskit/tree/master">master branch</a>.
+
+A demo of the example app can be found <a href="https://stageverslag-0901291.herokuapp.com" target="_blank">right here</a>.
+
 React-redux starterskit is a starterskit for an isomorphic web-app in ReactJS with the power of Redux behind it.
 
 ## Features
@@ -8,6 +12,15 @@ React-redux starterskit is a starterskit for an isomorphic web-app in ReactJS wi
 - Server side rendering is built in into the application to serve crawlers such as Google and offer basic support to people browsing without JavaScript enabled. Please note that data you add or edit in the application, is not rendered on the server because of it being in your browser's storage. When using an API/database, data fetching has to be server side, so the data is available on initial load.
 - Styling is done through SASS/SCSS.
 - Heroku support is already built in to make it as easy as possible to launch your app into the world wide web.
+
+## Example app features
+- Manage (add/edit/delete) pages and your app's header
+- Manage (add/edit/delete) achievements with a state (to do/in progress/done)
+- Manage (add/edit/delete) log items to blog about your days at the company
+- Add references of pages and log items to your achievement to show where you worked on achieving the achievement.
+- Toggle logged in state to see what your app looks like when you're not logged in
+- Default data is already added, but can all be deleted. The entire portfolio is stored in your browser's localStorage, so none of your data is visible to the outside world.
+- Filter achievements on the overview page based on status (to do, in progress, done) or type
 
 ## Usage
 1. Clone the repo.
