@@ -5,9 +5,9 @@ import * as types from './actionTypes';
  * @returns {{type}} Action to pass through the Redux reducers to update the application state
  */
 export function beginAjaxCall() {
-    return {
-        type: types.BEGIN_AJAX_CALL
-    };
+  return {
+    type: types.BEGIN_AJAX_CALL
+  };
 }
 
 /**
@@ -15,7 +15,7 @@ export function beginAjaxCall() {
  * @returns {{type}} Action to pass through the Redux reducers to update the application state
  */
 export function ajaxCallError() {
-    return {
-        type: types.AJAX_CALL_ERROR
-    };
+  return {
+    type: types.AJAX_CALL_ERROR
+  };
 }
