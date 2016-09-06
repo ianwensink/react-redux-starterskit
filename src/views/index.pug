@@ -1,0 +1,10 @@
+html
+  head
+    title Stageverslag Ian Wensink | 2016/2017 | 0901291
+    link(href='/static/style.css', rel='stylesheet')
+  body
+    #app
+      div!= reactString /* Inject React string generated through server side rendering */
+    script window.INITIAL_STATE = !{JSON.stringify(finalState)}; /* Inject initial React state generated through server side rendering */
+    script(src='/static/bundle.js')
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
