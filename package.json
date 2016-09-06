@@ -1,13 +1,13 @@
 {
-  "name": "stageverslag-0901291",
+  "name": "react-redux-starterskit",
   "version": "1.0.0",
   "scripts": {
-    "postinstall": "echo 'postinstall';npm run build",
-    "start": "npm run serve",
-    "serve": "NODE_ENV=development babel-node ./src/server.js",
-    "serve:prod": "echo 'start';node --optimize_for_size --max_old_space_size=460 --gc_interval=100 ./dist/server.bundle.js",
-    "build": "echo 'build';NODE_ENV=production webpack --config ./tools/webpack/webpack.config.js",
-    "clean": "rimraf dist"
+    "start": "echo 'running start'; npm run serve",
+    "postinstall": "echo 'running postinstall';npm run build",
+    "serve": "echo 'running serve'; NODE_ENV=development babel-node ./src/server.js",
+    "serve:prod": "echo 'running serve:prod'; node --optimize_for_size --max_old_space_size=460 --gc_interval=100 ./dist/server.bundle.js",
+    "build": "echo 'running build';NODE_ENV=production webpack --config ./tools/webpack/webpack.config.js",
+    "clean": "echo 'running clean' rimraf dist"
   },
   "engines": {
     "node": "6.2.2",
@@ -63,6 +63,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/0901291/stageverslag-0901291"
+    "url": "https://github.com/ianwensink/react-redux-starterskit"
   }
 }
